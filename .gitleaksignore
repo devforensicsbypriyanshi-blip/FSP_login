@@ -1,0 +1,57 @@
+# Verified false positives.
+#
+# Each entry must be investigated and justified before being added. Never add a
+# fingerprint to silence a finding you have not actually read — the whole value
+# of the scan is that it fails loudly.
+#
+# NOTE: do not quote the flagged string in these comments. gitleaks scans this
+# file too, so reproducing the value here creates a second finding pointing at
+# the file that explains the first one.
+#
+# Format: <commit>:<file>:<rule>:<line>
+
+# ---------------------------------------------------------------------------
+# developer_dashboard.html:395 — a fake token string inside a showToast() call
+# in a button handler.
+#
+# It is UI copy, not a credential: the static package was a click-through
+# prototype with no backend, and no such key was ever issued. Verified on
+# 2026-08-06 by reading the line via `git show 4edcaf6:<path>`.
+#
+# The file is no longer tracked (the package was retired after the Next.js
+# port), but gitleaks scans full history so the finding persists in 4edcaf6.
+# Rewriting history to remove demo text would be disproportionate and would
+# break every existing clone.
+# ---------------------------------------------------------------------------
+4edcaf6e83f4153b3a96d6b9dfb81469d55e2642:FSP_Frontend_UI_Package/developer_dashboard.html:generic-api-key:395
+
+# ---------------------------------------------------------------------------
+# .gitleaksignore:10 — the earlier version of this file quoted the flagged
+# string in a comment, so the scanner flagged the explanation as a leak. The
+# quote has since been removed, but the commit remains in history.
+# ---------------------------------------------------------------------------
+a410221265445dc44248fe9f64005012b288d96e:.gitleaksignore:generic-api-key:10
+
+# ---------------------------------------------------------------------------
+# .env.example:39 and :137 — the Supabase anon key and Razorpay secret
+# placeholders in the committed env template.
+#
+# Both are dummy values; the word "dummy" is literally in each one. Verified on
+# 2026-08-14 by reading them via `git show 71f2d03:.env.example`. The anon key
+# is public by design in any case — it ships in the browser bundle and is
+# protected by RLS, not by secrecy.
+#
+# The current template leaves these blank, but the values remain in history.
+# ---------------------------------------------------------------------------
+71f2d03ffcdd4016bdab84ad522d373c388c5df2:.env.example:generic-api-key:39
+71f2d03ffcdd4016bdab84ad522d373c388c5df2:.env.example:generic-api-key:137
+
+# ---------------------------------------------------------------------------
+# signed-cookie.test.ts:4 — a test constant.
+#
+# signPayload() rejects secrets under 16 characters, so the fixture has to be
+# long enough to exercise the real path, which makes it look key-shaped to the
+# entropy rule. It is not a secret and signs nothing outside the test file.
+# Verified on 2026-08-14 via `git show 5b17847:<path>`.
+# ---------------------------------------------------------------------------
+5b17847392715236aa7b434e0ebaa47cd04fc111:src/lib/session/signed-cookie.test.ts:generic-api-key:4

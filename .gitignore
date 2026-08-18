@@ -1,0 +1,70 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+
+# next.js
+.next/
+.next-build/
+out/
+build/
+next-env.d.ts
+
+# production
+dist/
+
+# env — NEVER commit these
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+!.env.example
+
+# testing
+coverage/
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+
+# supabase local
+supabase/.branches/
+supabase/.temp/
+supabase/.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# editors / os
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# sentry
+.sentryclirc
+.env.sentry-build-plugin
+
+# Superseded design reference
+# The original static HTML mockups. Kept on disk for historical reference but
+# no longer tracked: they are off-brand (purple, not the navy/amber brand),
+# have zero media queries, and notifications.html uses an undefined
+# .app-layout class. The React port in src/ replaces them entirely.
+FSP_Frontend_UI_Package/
+_archive_and_unused/
+
+.vercel

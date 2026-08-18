@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>You're offline · Forensic Science by Priyanshi</title>
+    <style>
+      :root {
+        --primary: #7c3aed;
+        --ink: #111827;
+        --muted: #6b7280;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: #fafafb;
+        color: var(--ink);
+        font-family:
+          'Inter',
+          -apple-system,
+          BlinkMacSystemFont,
+          system-ui,
+          sans-serif;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+      }
+      .card {
+        max-width: 380px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      .badge {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+        background: var(--primary);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        box-shadow: 0 10px 25px -5px rgb(124 58 237 / 0.35);
+      }
+      h1 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      p {
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      ul {
+        margin: 0;
+        padding-left: 18px;
+        text-align: left;
+        font-size: 13.5px;
+        line-height: 1.9;
+        color: var(--muted);
+      }
+      button {
+        min-height: 44px;
+        padding: 0 24px;
+        border: 0;
+        border-radius: 10px;
+        background: var(--primary);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+      }
+      button:active {
+        transform: scale(0.98);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="badge">FS</div>
+      <h1>You&rsquo;re offline</h1>
+      <p>
+        We can&rsquo;t reach the network right now. Pages you&rsquo;ve already opened are still available.
+      </p>
+      <ul>
+        <li>Downloaded notes work offline</li>
+        <li>Video and live classes need a connection</li>
+      </ul>
+      <button onclick="location.reload()">Try again</button>
+    </div>
+    <script>
+      addEventListener('online', () => location.reload());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+@import 'tailwindcss';
+
+/* ============================================================================
+   FSP DESIGN TOKENS — Official Brand Guidelines (Aug 2026)
+   Source: "forensic science by priyanshi - brand guidelines.pdf"
+
+   OFFICIAL 6-COLOR PALETTE:
+     Primary 1 : Dark Purple  #1D1A39  — Hero BG, headings, nav, 60-70% presence
+     Primary 2 : Plum         #451952  — Subheadings, cards, solid buttons
+     Secondary 1: Wine        #662549  — Highlights, dividers, section labels
+     Secondary 2: Rose        #AF445A  — Attention areas, callouts, decorative
+     Accent 1  : Amber        #F59F59  — CTA buttons, badges. NEVER body text.
+     Accent 2  : Blush/Peach  #E8BCB9  — Light BG tints, text on dark surfaces
+
+   CONTRAST: Amber on white is ~2.1:1 — fails WCAG for text. Amber is a FILL
+   colour only (navy sits on it at ~8:1). Rose clears 4.5:1 on white for text.
+   Max 3 colours per layout. Max 2-colour gradients only.
+
+   TYPOGRAPHY: Poppins (headings), DM Serif Display (hero/editorial), Inter (body).
+   ========================================================================= */
+@theme {
+  /* --- Primary Brand Colours --------------------------------------------- */
+  --color-navy: #1D1A39;
+  --color-navy-deep: #131024;
+  --color-navy-soft: #2c2850;
+
+  --color-primary: #451952;         /* Plum — the new "primary" action colour */
+  --color-primary-hover: #3a1346;
+  --color-primary-active: #2e0f38;
+  --color-primary-light: #f6eef8;   /* Very light plum tint */
+  --color-primary-ultra: #faf5fb;   /* Ultra-light plum wash */
+  --color-primary-border: #e5cfe9;  /* Plum-tinted border */
+  --color-primary-dark: #1D1A39;    /* Dark Purple as deep accent */
+  --color-primary-plum: #451952;    /* Explicit plum alias */
+  --color-primary-wine: #662549;    /* Wine as deep variant */
+
+  /* --- Secondary & Accent ------------------------------------------------ */
+  --color-wine: #662549;
+  --color-rose: #AF445A;
+  --color-amber: #F59F59;
+  --color-blush: #E8BCB9;
+  --color-blush-light: #F9F0EF;
+
+  /* Filled CTA: Amber ground, NAVY ink (~8:1 contrast). Per brand guidelines. */
+  --color-cta: #F59F59;
+  --color-cta-hover: #e88f49;
+  --color-cta-ink: #1D1A39;
+
+  /* --- Role accents, all from the brand family --------------------------- */
+  --color-role-student: #451952;
+  --color-role-educator: #662549;
+  --color-role-admin: #1D1A39;
+  --color-role-support: #AF445A;
+  --color-role-developer: #3d5a6c;
+
+  /* --- Neutrals ---------------------------------------------------------- */
+  --color-app: #FAF8F7;            /* Warm off-white, sits under the blush family */
+  --color-surface: #ffffff;
+  --color-muted-bg: #f3f0ef;
+  --color-hover: #faf7f6;
+
+  /* --- Text -------------------------------------------------------------- */
+  --color-ink: #1D1A39;
+  --color-ink-secondary: #4a4663;
+  --color-ink-muted: #6f6b85;
+  --color-ink-light: #67637c;
+
+  /* --- Borders ----------------------------------------------------------- */
+  --color-line: #f2eeed;
+  --color-line-medium: #e6e0df;
+  --color-line-dark: #cec7c6;
+
+  /* --- Semantic feedback ------------------------------------------------- */
+  --color-success: #146b46;
+  --color-success-bg: #e6f4ed;
+  --color-success-border: #bfe3d1;
+  --color-error: #c0392f;
+  --color-error-bg: #fbeceb;
+  --color-error-border: #f3cbc7;
+  --color-warning: #a85a19;
+  --color-warning-bg: #fdf1e7;
+  --color-warning-border: #f7ddc4;
+  --color-info: #2f5d8c;
+  --color-info-bg: #eaf1f8;
+  --color-info-border: #c7d9ea;
+
+  /* --- Typography -------------------------------------------------------- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-dm-serif), 'Georgia', serif;
+
+  /* --- Radii ------------------------------------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 11px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+
+  /* --- Shadows — warm-tinted for the off-white ground -------------------- */
+  --shadow-xs: 0 1px 2px rgb(29 26 57 / 0.05);
+  --shadow-sm: 0 1px 3px rgb(29 26 57 / 0.07), 0 1px 2px rgb(29 26 57 / 0.04);
+  --shadow-md: 0 4px 6px -1px rgb(29 26 57 / 0.08), 0 2px 4px -1px rgb(29 26 57 / 0.04);
+  --shadow-lg: 0 10px 15px -3px rgb(29 26 57 / 0.09), 0 4px 6px -2px rgb(29 26 57 / 0.05);
+  --shadow-xl: 0 20px 25px -5px rgb(29 26 57 / 0.12), 0 10px 10px -5px rgb(29 26 57 / 0.05);
+  --shadow-brand: 0 10px 25px -5px rgb(175 68 90 / 0.25);
+  --shadow-cta: 0 10px 22px -6px rgb(245 159 89 / 0.45);
+  --shadow-purple: 0 10px 25px -5px rgb(69 25 82 / 0.30);
+
+  --animate-fade-in: fade-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================================
+   BASE
+   ========================================================================= */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-app);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    /* dvh, not vh — mobile browser chrome would otherwise clip the layout */
+    min-height: 100dvh;
+  }
+
+  /* Poppins headings — per brand guidelines, all headings in Poppins Bold. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line-dark);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ink-light);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Bottom nav must clear the iPhone home indicator. */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  /* The brand's signature dark ground — Dark Purple base with subtle depth.
+     Max 2-color gradient per brand guidelines. */
+  .bg-brand-gradient {
+    background-image: linear-gradient(135deg, #131024 0%, #1D1A39 55%, #2c2850 100%);
+  }
+
+  /* Plum-to-Wine gradient for elevated buttons or panels. */
+  .bg-plum-gradient {
+    background-image: linear-gradient(135deg, #451952 0%, #662549 100%);
+  }
+}
