@@ -1,148 +1,139 @@
-﻿import { Bell, Flame, MessageCircle, Sparkles, Youtube } from 'lucide-react';
+﻿import { ArrowRight, Bell, CheckCircle2, MessageCircle, Sparkles, Youtube } from 'lucide-react';
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Coming Soon · Forensic Science by Priyanshi',
-  description: 'Our new interactive web application is launching soon.',
+  title: 'Forensic Science by Priyanshi · Learning Portal Coming Soon',
+  description: 'The official digital learning portal for Forensic Science by Priyanshi is launching soon.',
 };
 
 export default function ComingSoonPage() {
   return (
-    <main className="min-h-screen bg-[#FAF8F7] flex flex-col justify-between selection:bg-[#E8BCB9] selection:text-[#1D1A39]">
-      {/* Top Header */}
-      <header className="w-full border-b border-slate-200/80 bg-white/90 backdrop-blur-md sticky top-0 z-30 px-4 sm:px-8 py-4">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
+    <div className=\"min-h-screen bg-[#FAF8F7] text-[#1D1A39] flex flex-col justify-between selection:bg-[#E8BCB9] selection:text-[#1D1A39]\">
+      {/* Top Navbar */}
+      <header className=\"w-full bg-white border-b border-slate-100 sticky top-0 z-30 px-6 sm:px-12 py-4 shadow-2xs\">
+        <div className=\"max-w-6xl mx-auto flex items-center justify-between\">
+          <div className=\"flex items-center gap-3.5\">
             <img
-              src="/logo.png"
-              alt="Forensic Science by Priyanshi"
-              className="size-10 rounded-xl object-contain bg-white border border-slate-100 p-0.5 shadow-2xs"
+              src=\"/logo.png\"
+              alt=\"Forensic Science by Priyanshi\"
+              className=\"size-11 rounded-2xl object-contain bg-white border border-slate-100 p-1 shadow-2xs\"
             />
-            <div className="flex flex-col leading-tight">
-              <span className="text-[10px] font-bold tracking-wider text-[#6f6b85] uppercase">
+            <div className=\"flex flex-col leading-tight\">
+              <span className=\"text-[10px] font-bold tracking-[0.18em] text-[#6f6b85] uppercase\">
                 Forensic Science by
               </span>
-              <span className="font-serif text-[17px] font-bold tracking-tight text-[#1D1A39]">
+              <span className=\"font-serif text-lg font-bold tracking-tight text-[#1D1A39]\">
                 Priyanshi
               </span>
             </div>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF8FC] border border-[#EADBEE] text-xs font-bold text-[#451952]">
-            <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Launching Soon</span>
+          <div className=\"inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF8FC] border border-[#EADBEE] text-xs font-bold text-[#451952]\">
+            <span className=\"size-2 rounded-full bg-emerald-500 animate-pulse\" />
+            <span>Platform Launching Soon</span>
           </div>
         </div>
       </header>
 
-      {/* Main Content Hero */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full flex flex-col gap-8">
-        {/* Banner */}
-        <section className="relative overflow-hidden rounded-[28px] bg-gradient-to-r from-[#1D1A39] via-[#451952] to-[#662549] text-white p-8 sm:p-12 shadow-xl">
-          <div className="absolute top-0 right-0 -mt-10 -mr-10 size-72 rounded-full bg-white/5 blur-3xl pointer-events-none" />
-
-          <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-xs font-bold tracking-wide text-[#E8BCB9] mb-4">
-                <Sparkles className="size-3.5 text-[#F59F59]" />
-                <span>Web Application In Final Stages</span>
-              </div>
-
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
-                Something Big Is Coming Soon! 🚀
-              </h1>
-
-              <p className="text-slate-200 text-sm sm:text-base mt-3 leading-relaxed">
-                We are crafting an all-new interactive learning experience with high-yield forensic video modules, live sessions, daily practice sets, and mock tests.
-              </p>
-
-              <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-[#E8BCB9]">
-                <div className="flex items-center gap-1.5 bg-white/10 px-3.5 py-2 rounded-xl border border-white/10">
-                  <Flame className="size-4 text-[#F59F59]" />
-                  <span>Target: CUET PG · UGC NET · NFSU</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Target 3D Illustration */}
-            <div className="relative shrink-0 flex items-center justify-center self-center md:self-auto w-[160px] sm:w-[200px] aspect-square">
-              <Image
-                src="/images/target_books.png"
-                alt="Target Forensic Science"
-                width={200}
-                height={200}
-                className="object-contain select-none pointer-events-none drop-shadow-md"
-                priority
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Community Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="p-6 rounded-2xl border border-slate-200/80 bg-white shadow-2xs flex flex-col justify-between">
-            <div>
-              <div className="size-10 rounded-xl bg-[#FAF8F7] border border-[#e6e0df] flex items-center justify-center text-[#451952] mb-3.5">
-                <Bell className="size-5" />
-              </div>
-              <h3 className="font-bold text-sm text-[#1D1A39]">Batch Announcements</h3>
-              <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                Stay updated on upcoming batch dates, syllabus roadmaps, and course enrollment releases.
-              </p>
-            </div>
-            <span className="mt-4 text-[11px] font-bold text-emerald-600 flex items-center gap-1">
-              Opening Soon
-            </span>
-          </div>
-
-          <div className="p-6 rounded-2xl border border-slate-200/80 bg-white shadow-2xs flex flex-col justify-between">
-            <div>
-              <div className="size-10 rounded-xl bg-[#FAF8F7] border border-[#e6e0df] flex items-center justify-center text-[#25D366] mb-3.5">
-                <MessageCircle className="size-5" />
-              </div>
-              <h3 className="font-bold text-sm text-[#1D1A39]">WhatsApp Aspirants Club</h3>
-              <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                Connect with fellow forensic aspirants, receive daily questions, and get direct updates from Priyanshi Ma&apos;am.
-              </p>
-            </div>
-            <a
-              href="https://wa.me/919999999999?text=Hi%20Priyanshi%20Ma'am,%20I%20want%20to%20join%20the%20community"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-[#451952] hover:underline"
-            >
-              <span>Join WhatsApp Group</span>
-              <span>&rarr;</span>
-            </a>
-          </div>
-
-          <div className="p-6 rounded-2xl border border-slate-200/80 bg-white shadow-2xs flex flex-col justify-between">
-            <div>
-              <div className="size-10 rounded-xl bg-[#FAF8F7] border border-[#e6e0df] flex items-center justify-center text-[#FF0000] mb-3.5">
-                <Youtube className="size-5" />
-              </div>
-              <h3 className="font-bold text-sm text-[#1D1A39]">Free Masterclasses</h3>
-              <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                Watch curated masterclasses, previous year question analyses, and core conceptual breakdowns on YouTube.
-              </p>
-            </div>
-            <a
-              href="https://youtube.com/@forensicsciencebypriyanshi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-[#451952] hover:underline"
-            >
-              <span>Watch on YouTube</span>
-              <span>&rarr;</span>
-            </a>
-          </div>
+      {/* Main Hero Section */}
+      <main className=\"max-w-5xl mx-auto px-6 py-12 sm:py-16 w-full flex flex-col items-center text-center my-auto\">
+        {/* Badge */}
+        <div className=\"inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#451952]/10 border border-[#451952]/15 text-xs font-bold text-[#451952] mb-6 shadow-2xs\">
+          <Sparkles className=\"size-3.5 text-[#F59F59]\" />
+          <span>New Interactive Learning App · In Final Deployment</span>
         </div>
-      </div>
+
+        {/* Headline */}
+        <h1 className=\"text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#1D1A39] tracking-tight leading-[1.15] max-w-3xl\">
+          Master Forensic Science with{' '}
+          <span className=\"bg-gradient-to-r from-[#451952] via-[#662549] to-[#AF445A] bg-clip-text text-transparent\">
+            India&apos;s Top Faculty
+          </span>
+        </h1>
+
+        {/* Subtext */}
+        <p className=\"text-slate-600 text-sm sm:text-lg max-w-2xl mt-4 leading-relaxed font-normal\">
+          We are putting the final touches on your all-in-one learning dashboard — structured video lectures, DRM study notes, mock tests, and 1:1 mentorship.
+        </p>
+
+        {/* Target Exams Pill Bar */}
+        <div className=\"mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs font-semibold text-slate-700\">
+          <span className=\"px-4 py-2 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center gap-2\">
+            <CheckCircle2 className=\"size-4 text-[#451952]\" /> CUET PG Forensic Science
+          </span>
+          <span className=\"px-4 py-2 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center gap-2\">
+            <CheckCircle2 className=\"size-4 text-[#451952]\" /> UGC NET / JRF Forensic Science
+          </span>
+          <span className=\"px-4 py-2 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center gap-2\">
+            <CheckCircle2 className=\"size-4 text-[#451952]\" /> NFSU &amp; State University Entrances
+          </span>
+        </div>
+
+        {/* Community Action Cards */}
+        <div className=\"grid grid-cols-1 md:grid-cols-2 gap-5 mt-12 w-full max-w-3xl text-left\">
+          {/* WhatsApp Card */}
+          <a
+            href=\"https://wa.me/919999999999?text=Hi%20Priyanshi%20Ma%27am%2C%20I%20want%20to%20join%20the%20Forensic%20Science%20community\"
+            target=\"_blank\"
+            rel=\"noopener noreferrer\"
+            className=\"group p-6 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#451952]/40 hover:shadow-md transition-all flex flex-col justify-between\"
+          >
+            <div>
+              <div className=\"size-11 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-[#25D366] mb-4\">
+                <MessageCircle className=\"size-5\" />
+              </div>
+              <h2 className=\"font-bold text-base text-[#1D1A39] group-hover:text-[#451952] transition-colors\">
+                Join WhatsApp Study Community
+              </h2>
+              <p className=\"text-xs sm:text-sm text-slate-500 mt-1.5 leading-relaxed\">
+                Get daily high-yield MCQs, batch updates, syllabus roadmaps, and direct announcements from Priyanshi Ma&apos;am.
+              </p>
+            </div>
+            <div className=\"mt-5 flex items-center gap-1.5 text-xs font-bold text-[#451952] group-hover:underline\">
+              <span>Connect on WhatsApp</span>
+              <ArrowRight className=\"size-4 transition-transform group-hover:translate-x-1\" />
+            </div>
+          </a>
+
+          {/* YouTube Card */}
+          <a
+            href=\"https://youtube.com/@forensicsciencebypriyanshi\"
+            target=\"_blank\"
+            rel=\"noopener noreferrer\"
+            className=\"group p-6 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#AF445A]/40 hover:shadow-md transition-all flex flex-col justify-between\"
+          >
+            <div>
+              <div className=\"size-11 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-[#FF0000] mb-4\">
+                <Youtube className=\"size-5\" />
+              </div>
+              <h2 className=\"font-bold text-base text-[#1D1A39] group-hover:text-[#AF445A] transition-colors\">
+                Watch Free Masterclasses
+              </h2>
+              <p className=\"text-xs sm:text-sm text-slate-500 mt-1.5 leading-relaxed\">
+                Access free conceptual breakdowns, previous year paper discussions, and forensic biology masterclasses on YouTube.
+              </p>
+            </div>
+            <div className=\"mt-5 flex items-center gap-1.5 text-xs font-bold text-[#AF445A] group-hover:underline\">
+              <span>Explore YouTube Channel</span>
+              <ArrowRight className=\"size-4 transition-transform group-hover:translate-x-1\" />
+            </div>
+          </a>
+        </div>
+      </main>
 
       {/* Footer */}
-      <footer className="w-full border-t border-slate-200/80 bg-white py-6 px-4 text-center text-xs text-slate-500">
-        <p>&copy; {new Date().getFullYear()} Forensic Science by Priyanshi. All rights reserved.</p>
+      <footer className=\"w-full border-t border-slate-200 bg-white py-6 px-6 text-center text-xs text-slate-500\">
+        <div className=\"max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3\">
+          <p>&copy; {new Date().getFullYear()} Forensic Science by Priyanshi. All rights reserved.</p>
+          <div className=\"flex items-center gap-4 text-slate-500 text-xs font-medium\">
+            <span>CUET PG</span>
+            <span>·</span>
+            <span>UGC NET</span>
+            <span>·</span>
+            <span>NFSU</span>
+          </div>
+        </div>
       </footer>
-    </main>
+    </div>
   );
 }
