@@ -45,13 +45,8 @@ export default function ComingSoonPage() {
           </span>
         </h1>
 
-        {/* Subtext */}
-        <p className="text-slate-600 text-sm sm:text-base lg:text-lg max-w-2xl mt-3.5 leading-relaxed font-normal">
-          We are putting the final touches on your all-in-one learning dashboard — structured video lectures, DRM study notes, mock tests, and 1:1 mentorship.
-        </p>
-
         {/* Target Exams Pill Bar */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs font-semibold text-slate-700">
+        <div className="mt-7 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs font-semibold text-slate-700">
           <span className="px-4 py-1.5 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center gap-2">
             <CheckCircle2 className="size-4 text-[#451952]" /> CUET PG Forensic Science
           </span>
